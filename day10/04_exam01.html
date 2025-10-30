@@ -15,9 +15,9 @@
     <!-- 
         가위바위보 이미지를 버튼태그에 넣어 선택하여 가위바위보의 승률 계산
     -->
-    <button onclick="play(0)"><img src="../image/math_img_1.jpg" alt=""></button>
-    <button onclick="play(1)"><img src="../image/math_img_2.jpg" alt=""></button>
-    <button onclick="play(2)"><img src="../image/math_img_3.jpg" alt=""></button>
+    <button><img id="0" src="../image/math_img_1.jpg" alt=""></button>
+    <button><img id="1" src="../image/math_img_2.jpg" alt=""></button>
+    <button><img id="2" src="../image/math_img_3.jpg" alt=""></button>
     <h1 id="result"></h1>
 
     <!-- 
@@ -27,6 +27,18 @@
         승률 : 56.25%
     -->
     <script>
+
+        document.addEventListener('click',(e)=>{
+            // 모든 화면에 이벤트가 달림
+            // 동적으로 생기는 모든 객체에 이벤트 추가가능
+            console.log(e.target.value);
+            // id가 존재할때만 작동
+            if(e.target.id){
+                play(e.target.id);
+            }
+
+        })
+
         // 전역변수 결과변수
         //let win=0;
         //let draw=0;
